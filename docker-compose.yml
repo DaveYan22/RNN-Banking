@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  rnn-train:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./model:/app/model
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python src/train.py
